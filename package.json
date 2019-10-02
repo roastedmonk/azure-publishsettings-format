@@ -1,0 +1,47 @@
+{
+    "name": "azure-publishsettings-format",
+    "displayName": "azure-publishsettings-format",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "subramaniam",
+    "engines": {
+        "vscode": "^1.6.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:azure-publishsettings"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "azure-publishsettings",
+                "aliases": [
+                    "azure-publishsettings"
+                ],
+                "extensions": [
+                    "azure-publishsettings"
+                ]
+            }
+        ],
+        "commands": [
+            {
+                "command": "extension.azure-publishsettings",
+                "title": "(Azure) Publish Settings Files"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install && tsc"
+    },
+    "devDependencies": {
+        "@types/node": "12.7.2",
+        "vscode": "1.1.36",
+        "typescript": "3.5.3"
+    },
+    "dependencies": {
+        "xml-js": "^1.6.11"
+    }
+}
